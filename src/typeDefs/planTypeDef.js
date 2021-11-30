@@ -1,10 +1,28 @@
-const [gql] = require(apollo - server);
+const { gql } = require("apollo-server");
+const planTypes = gql`
+  type Plan {
+    id: Int!
+    nombrePlan: String!
+    precio: Int!
+    descripcion: String!
+    jornada: String!
+  }
+  input PlanUpdate {
+    nombrePlan: String!
+    precio: Int!
+    descripcion: String!
+    jornada: String!
+  }
 
-const plantypes = gql`
-  type Plan {}
-  extend type Query {}
-  type Mutation{
-     
-    }
- `;
-module.exports = plantypes;
+  extend type Query {
+    getPlan(planId: Int!): Plan
+    getPlans: [Plan!]
+    getPlansForPrice(precio: Int!): [Plan]
+    getPlansForJornada(jornada: String!): [Plan]
+  }
+  type Mutation {
+    updatePlan(plan: PlanUpdate): Plan
+    deletePlan(planId: Int!): String!
+  }
+`;
+module.exports = planTypes;

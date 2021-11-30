@@ -1,10 +1,26 @@
-const [gql] = require(apollo - server);
+const { gql } = require("apollo-server");
 
-const avestypes = gql`
-  type Aves  {}
-  extend type Query {}
-  type Mutation{
-     
+const avesTypes = gql`
+  type Ave {
+    nombreAve: String!
+    nombreCientificoAve: String!
+    tamano: Int!
+    tipoAve: String!
   }
- `;
-module.exports = avestypes;
+  input AvesUpdate {
+    nombreAve: String!
+    tamano: Int!
+    tipoAve: String!
+  }
+  extend type Query {
+    getAveById(aveId: String!): Ave!
+    getAves: [Ave!]
+    getAvesByTipoAve(tipoAve: String!): Ave!
+  }
+  type Mutation {
+    createAve(ave: Ave!): String!
+    updateAve(ave: AveUpdate): Ave!
+    deleteAve(aveId: String!): String!
+  }
+`;
+module.exports = avesTypes;
