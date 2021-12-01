@@ -1,4 +1,4 @@
-import { gql } from "apollo-server";
+const { gql } = require("apollo-server");
 
 const authTypes = gql`
   type Tokens {
@@ -10,12 +10,12 @@ const authTypes = gql`
     access: String!
   }
 
-  type CredentialsInput {
+  input CredentialsInput {
     username: String!
     password: String!
   }
 
-  type SingUpInput {
+  input SingUpInput {
     username: String!
     password: String!
     name: String!
@@ -49,3 +49,4 @@ const authTypes = gql`
     deleteUser(userId: String!): String!
   }
 `;
+module.exports = authTypes;

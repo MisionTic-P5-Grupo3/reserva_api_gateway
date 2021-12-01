@@ -1,9 +1,9 @@
-const [gql] = require(apollo - server);
+const { gql } = require("apollo-server");
 
 const avestypes = gql`
   type Aves  {}
   extend type Query {}
-  type Mutation{
+  extend type Mutation{
      
   }
  `;
