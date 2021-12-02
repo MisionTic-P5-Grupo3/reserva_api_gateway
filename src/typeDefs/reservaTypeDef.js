@@ -1,4 +1,5 @@
 const { gql } = require("apollo-server");
+
 const reservaTypes = gql`
   type Reserva  {
     idReserva:	Int!
@@ -35,6 +36,4 @@ const reservaTypes = gql`
   type Mutation{
     createReserva(reserva:Reserva):ReservaDetail
     deleteReserva(idReserva: Int!):String!
-  }
- `;
-module.exports = reservaTypes;
+

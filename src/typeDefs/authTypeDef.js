@@ -52,4 +52,7 @@ const authTypes = gql`
     deleteUser(userId: String!): String!
   }
 `;
+
 module.exports = authTypes;
+
+

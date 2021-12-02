@@ -1,4 +1,5 @@
 const { gql } = require("apollo-server");
+
 const planTypes = gql`
   type Plan {
     id: Int!
@@ -26,3 +27,5 @@ const planTypes = gql`
   }
 `;
 module.exports = planTypes;
+
+

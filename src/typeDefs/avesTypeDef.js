@@ -1,5 +1,6 @@
 const { gql } = require("apollo-server");
 
+
 const avesTypes = gql`
   type Ave {
     nombreAve: String!
@@ -24,3 +25,5 @@ const avesTypes = gql`
   }
 `;
 module.exports = avesTypes;
+
+
