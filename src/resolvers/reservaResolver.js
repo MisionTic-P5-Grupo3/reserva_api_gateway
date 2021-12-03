@@ -1,4 +1,5 @@
 const reservasResolver = {
+
   Query: {
     getReserva: async (_, {idReserva}, {dataSources}) =>{
       return await dataSources.reservasAPI.detailReserva(idReserva);
@@ -21,3 +22,4 @@ const reservasResolver = {
   },
 };
 module.exports = reservasResolver;
+

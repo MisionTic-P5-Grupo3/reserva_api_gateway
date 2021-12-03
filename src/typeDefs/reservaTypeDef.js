@@ -36,6 +36,7 @@ const reservaTypes = gql`
   type Mutation{
     createReserva(reserva:Reserva):ReservaDetail
     deleteReserva(idReserva: Int!):String!
+
   }
 `;
 module.exports = reservaTypes;

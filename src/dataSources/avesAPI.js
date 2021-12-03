@@ -20,6 +20,7 @@ class AvesAPI extends RESTDataSource {
   async aveByJornada(aveJornada) {
     return await this.get(`/avesByJornada/${aveJornada}`);
   }
+
   async updateAve(ave) {
     ave = new Object(JSON.parse(JSON.stringify(ave)));
     let aveId = ave.id;
@@ -28,5 +29,6 @@ class AvesAPI extends RESTDataSource {
   async deleteAve(aveId) {
     return await this.delete(`/ave/${aveId}`);
   }
+
 }
 module.exports = AvesAPI;

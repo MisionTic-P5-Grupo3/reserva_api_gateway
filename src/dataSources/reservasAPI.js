@@ -6,6 +6,7 @@ class ReservasAPI extends RESTDataSource {
     super(); // Inicializa las variables de la clase heredada
     this.baseURL = serverConfig.reservas_api_url;
   }
+
   async createReserva(reserva){
     reserva = new Object (JSON.parse(JSON.stringify(reserva)));
     return await this.post("/reserva_usuario/", reserva);
@@ -48,3 +49,5 @@ class ReservasAPI extends RESTDataSource {
 }
 
 module.exports = ReservasAPI;
+
+

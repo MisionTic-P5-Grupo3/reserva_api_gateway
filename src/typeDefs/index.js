@@ -5,5 +5,7 @@ const planTypes = require("./planTypeDef");
 const reservaTypes = require("./reservaTypeDef");
 
 //const schemaArrays = [authTypes, avesTypes, planTypes, reservaTypes];
+
 const schemaArrays = [authTypes, avesTypes];
+
 module.exports = schemaArrays;

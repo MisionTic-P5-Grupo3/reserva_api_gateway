@@ -1,4 +1,5 @@
 const planResolver = {
+
   Query: {
     getPlan: async (_, {planId}, {dataSources}) =>{ 
       return await dataSources.reservasAPI.detailPlan(planId);
@@ -24,3 +25,4 @@ const planResolver = {
   },
 };
 module.exports = planResolver;
+

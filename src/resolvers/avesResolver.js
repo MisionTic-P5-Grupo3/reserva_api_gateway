@@ -1,4 +1,5 @@
 const avesResolver = {
+
   Query: {
     getAveById: async (_, {aveId}, {dataSources}) =>{
       return await dataSources.avesAPI.aveById(aveId);
@@ -18,5 +19,6 @@ const avesResolver = {
       return await dataSources.avesAPI.deleteAve(aveId);
     },
   },
+
 };
 module.exports = avesResolver;
