@@ -15,7 +15,7 @@ const planTypes = gql`
     jornada: String!
   }
 
-  extend type Query {
+  type Query {
     getPlan(planId: Int!): Plan
     getPlans: [Plan!]
     getPlansForPrice(precio: Int!): [Plan]

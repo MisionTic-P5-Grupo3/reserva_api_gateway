@@ -40,11 +40,11 @@ const authTypes = gql`
     email: String
   }
 
-  extend type Query {
+  type Query {
     userDetailById(userId: Int!): UserDetail!
   }
 
-  extend type Mutation {
+  type Mutation {
     singUpUser(userInput: SingUpInput): Tokens!
     logIn(credentials: CredentialsInput!): Tokens!
     refreshToken(token: Refresh): Access!

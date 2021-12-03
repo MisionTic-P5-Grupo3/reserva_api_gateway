@@ -8,12 +8,12 @@ const avesTypes = gql`
     tamano: Int!
     tipoAve: String!
   }
-  input AvesUpdate {
+  input AveUpdate {
     nombreAve: String!
     tamano: Int!
     tipoAve: String!
   }
-  extend type Query {
+  type Query {
     getAveById(aveId: String!): Ave!
     getAves: [Ave!]
     getAvesByTipoAve(tipoAve: String!): Ave!

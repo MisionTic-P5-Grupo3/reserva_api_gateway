@@ -1,5 +1,5 @@
-import { RESTDataSource } from "apollo-datasource-rest";
-const serverConfig = require("../server ");
+const { RESTDataSource } = require('apollo-datasource-rest');
+const serverConfig = require("../server");
 
 class ReservasAPI extends RESTDataSource {
   constructor() {

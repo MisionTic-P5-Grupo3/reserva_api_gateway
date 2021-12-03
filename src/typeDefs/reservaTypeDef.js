@@ -19,24 +19,16 @@ const reservaTypes = gql`
     telefono:	Int!
     correoElectronico:	String!
     fecha:	String!
-    idPlan: {
-      id: Int!
-      nombrePlan: String!
-      precio: Int!
-      descripcion: String!
-      jornada: String!
-    }
+    idPlan: Int!
   }
-  extend type Query {
+  type Query {
     getReserva(idReserva: Int!): ReservaDetail
     getReservas: [ReservaDetail]
     getReservasForUser(user:Int!): [ReservaDetail]
-   
   }
   type Mutation{
     createReserva(reserva:Reserva):ReservaDetail
     deleteReserva(idReserva: Int!):String!
-
   }
 `;
 module.exports = reservaTypes;
