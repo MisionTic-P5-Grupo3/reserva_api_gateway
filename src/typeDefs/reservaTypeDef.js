@@ -37,3 +37,6 @@ const reservaTypes = gql`
     createReserva(reserva:Reserva):ReservaDetail
     deleteReserva(idReserva: Int!):String!
 
+  }
+`;
+module.exports = reservaTypes;
