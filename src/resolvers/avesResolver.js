@@ -4,6 +4,9 @@ const avesResolver = {
     getAveById: async (_, {aveId}, {dataSources}) =>{
       return await dataSources.avesAPI.aveById(aveId);
     },
+    getAves: async (_,{dataSources})=> {
+      return await dataSources.avesAPI.allAves();
+    },
     getAvesByTipoAve: async (_, {tipoAve}, {dataSources}) =>{
       return await dataSources.avesAPI.aveByJornada(tipoAve);
     },

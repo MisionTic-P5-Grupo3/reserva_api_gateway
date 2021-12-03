@@ -4,7 +4,7 @@ const reservasResolver = {
     getReserva: async (_, {idReserva}, {dataSources}) =>{
       return await dataSources.reservasAPI.detailReserva(idReserva);
     },
-    getReservaForUser: async (_, {user}, {dataSources}) =>{
+    getReservasForUser: async (_, {user}, {dataSources}) =>{
       return await dataSources.reservasAPI.AllDetailReserva(user);
     },
   },

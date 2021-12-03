@@ -12,7 +12,7 @@ class AvesAPI extends RESTDataSource {
     return await this.post("/createAve/", ave);
   }
   async allAves() {
-    return await this.get("/aves/");
+    return await this.get("/aves");
   }
   async aveById(aveId) {
     return await this.get(`/ave/${aveId}`);

@@ -8,6 +8,12 @@ const avesTypes = gql`
     tamano: Int!
     tipoAve: String!
   }
+  input AveInput {
+    nombreAve: String!
+    nombreCientificoAve: String!
+    tamano: Int!
+    tipoAve: String!
+  }
   input AveUpdate {
     nombreAve: String!
     tamano: Int!
@@ -19,7 +25,7 @@ const avesTypes = gql`
     getAvesByTipoAve(tipoAve: String!): Ave!
   }
   type Mutation {
-    createAve(ave: Ave!): String!
+    createAve(ave: AveInput!): String!
     updateAve(ave: AveUpdate): Ave!
     deleteAve(aveId: String!): String!
   }

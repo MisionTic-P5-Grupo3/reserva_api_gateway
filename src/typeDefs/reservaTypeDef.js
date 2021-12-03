@@ -11,7 +11,7 @@ const reservaTypes = gql`
     fecha:	String!
     idPlan: Int!
   }
-  input ReservaDetail{
+  input ReservaInput  {
     idReserva:	Int!
     tipoDocumento: String!
     numeroDocumento:	Int!
@@ -21,14 +21,25 @@ const reservaTypes = gql`
     fecha:	String!
     idPlan: Int!
   }
+  input ReservaUpdate  {
+    tipoDocumento: String!
+    numeroDocumento:	Int!
+    nombreCompleto:	String!
+    telefono:	Int!
+    correoElectronico:	String!
+    fecha:	String!
+    idPlan: Int!
+  }
+ 
   type Query {
-    getReserva(idReserva: Int!): ReservaDetail
-    getReservas: [ReservaDetail]
-    getReservasForUser(user:Int!): [ReservaDetail]
+    getReserva(idReserva: Int!): Reserva
+    getReservas: [Reserva]
+    getReservasForUser(user:Int!):[Reserva]
   }
   type Mutation{
-    createReserva(reserva:Reserva):ReservaDetail
+    createReserva(reserva:ReservaInput):Reserva
     deleteReserva(idReserva: Int!):String!
+    ReservaUpdate(reserva:ReservaUpdate):Reserva
   }
 `;
 module.exports = reservaTypes;

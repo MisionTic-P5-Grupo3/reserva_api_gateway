@@ -22,7 +22,7 @@ class AuthAPI extends RESTDataSource {
     return await this.delete(`/user/delete/${userId}`);
   }
   async authRequest(credentials) {
-    credentials = new new Object(JSON.parse(JSON.stringify(credentials)))();
+    credentials =  new Object(credentials);
     return await this.post("/login/", credentials);
   }
   async refreshToken(token) {
