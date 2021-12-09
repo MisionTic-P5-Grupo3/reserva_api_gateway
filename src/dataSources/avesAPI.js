@@ -1,4 +1,4 @@
-const { RESTDataSource } = require('apollo-datasource-rest');
+const { RESTDataSource } = require("apollo-datasource-rest");
 const serverConfig = require("../server");
 
 class AvesAPI extends RESTDataSource {
@@ -29,6 +29,5 @@ class AvesAPI extends RESTDataSource {
   async deleteAve(aveId) {
     return await this.delete(`/ave/${aveId}`);
   }
-
 }
 module.exports = AvesAPI;
