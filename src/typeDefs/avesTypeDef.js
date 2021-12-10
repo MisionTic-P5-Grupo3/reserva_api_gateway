@@ -6,17 +6,23 @@ const avesTypes = gql`
     nombreCientificoAve: String!
     tamano: Int
     tipoAve: String!
+    descripcion: String
+    url: String
   }
   input AveInput {
     nombreAve: String!
     nombreCientificoAve: String!
     tamano: Int!
     tipoAve: String!
+    descripcion: String!
+    url: String!
   }
   input AveUpdate {
     nombreAve: String!
     tamano: Int!
     tipoAve: String!
+    descripcion: String
+    url: String
   }
   type Query {
     getAveById(aveId: String!): Ave!
