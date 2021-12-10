@@ -1,4 +1,4 @@
-const { RESTDataSource } = require('apollo-datasource-rest');
+const { RESTDataSource } = require("apollo-datasource-rest");
 const serverConfig = require("../server");
 
 class ReservasAPI extends RESTDataSource {
@@ -7,47 +7,48 @@ class ReservasAPI extends RESTDataSource {
     this.baseURL = serverConfig.reservas_api_url;
   }
 
-  async createReserva(reserva){
-    reserva = new Object (JSON.parse(JSON.stringify(reserva)));
+  async createReserva(reserva) {
+    reserva = new Object(JSON.parse(JSON.stringify(reserva)));
     return await this.post("/reserva_usuario/", reserva);
   }
-  async AllDetailReserva(User){
-    return await this.get(`/reserva_usuario/${User}/`);
+  async AllDetailReservasForUser(User) {
+    return await this.get(`/reservas_usuario/${User}/`);
   }
-  async detailReserva(idReserva){
+  async AllDetailReservas() {
+    return await this.get("/reservas/");
+  }
+  async detailReserva(idReserva) {
     return await this.get(`/reserva_usuario/${idReserva}/`);
   }
-  async updateReserva(){
-    reserva =new Object(JSON.parse(JSON.stringify(reserva)));
-    let idReserva=reserva.id;
-    return await this.put(`/reserva_usuario/update/${idReserva}/`,reserva);
+  async updateReserva(reserva) {
+    console.log(reserva);
+    reserva = new Object(reserva);
+    let idReserva = reserva.id_reserva;
+    return await this.put(`/reserva_usuario/update/${idReserva}/`, reserva);
   }
-  async deleteReserva(){
-    return await this.delete(`/transaction/remove/${idReserva}/`)
-
+  async deleteReserva(idReserva) {
+    return await this.delete(`/transaction/remove/${idReserva}/`);
   }
-  async detailPlan(planId){
+  async detailPlan(planId) {
     return await this.get(`/plan_usuario/${planId}/`);
   }
-  async AllPlansDetail(Plan){
+  async AllPlansDetail(Plan) {
     return await this.get(`/plans/`, Plan);
   }
-  async PlanForPrice(precio){
+  async PlanForPrice(precio) {
     return await this.get(`/plans_for_price/${precio}/`);
   }
-  async PlanForTimeDetail(jornada){
+  async PlanForTimeDetail(jornada) {
     return await this.get(`/plans_for_time/${jornada}/`);
   }
-  async updatePlan(){
-    plan =new Object(JSON.parse(JSON.stringify(plan)));
-    let idPlan=plan.id;
-    return await this.put(`/plan_usuario/update/${idPlan}/`,plan);
+  async updatePlan() {
+    plan = new Object(JSON.parse(JSON.stringify(plan)));
+    let idPlan = plan.id;
+    return await this.put(`/plan_usuario/update/${idPlan}/`, plan);
   }
-  async deletePlan(){
+  async deletePlan(idplan) {
     return await this.delete(`/plan_usuario/remove/${idplan}/`);
   }
 }
 
 module.exports = ReservasAPI;
-
-

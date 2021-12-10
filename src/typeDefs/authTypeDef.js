@@ -2,19 +2,19 @@ const { gql } = require("apollo-server");
 
 const authTypes = gql`
   type Tokens {
-    refresh:String!
-    access :String!
+    refresh: String!
+    access: String!
   }
   type Access {
-    access:String!
+    access: String!
   }
   input Refresh {
-    refresh:String!
+    refresh: String!
   }
-  
+
   input CredentialsInput {
-    username:String!
-    password:String!
+    username: String!
+    password: String!
   }
 
   input SingUpInput {
@@ -27,13 +27,13 @@ const authTypes = gql`
   type UserDetail {
     id: Int!
     username: String!
-    password: String!
     name: String!
     email: String
   }
 
   input UserUpdate {
     id: Int!
+    username: String!
     password: String!
     name: String!
     email: String
@@ -53,5 +53,3 @@ const authTypes = gql`
 `;
 
 module.exports = authTypes;
-
-

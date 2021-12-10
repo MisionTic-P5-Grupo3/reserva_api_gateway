@@ -2,14 +2,21 @@ const { gql } = require("apollo-server");
 
 const planTypes = gql`
   type Plan {
-    id: Int!
-    nombrePlan: String!
+    id_plan: Int!
+    nombre_plan: String!
     precio: Int!
-    descripcion: String!
-    jornada: String!
+    descripcion: String
+    jornada: String
+  }
+  type PlanDetail {
+    id_plan: Int!
+    nombre_plan: String!
+    precio: Int!
+    descripcion: String
+    jornada: String
   }
   input PlanUpdate {
-    nombrePlan: String!
+    nombre_plan: String!
     precio: Int!
     descripcion: String!
     jornada: String!
@@ -27,5 +34,3 @@ const planTypes = gql`
   }
 `;
 module.exports = planTypes;
-
-
