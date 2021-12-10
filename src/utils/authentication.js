@@ -12,7 +12,8 @@ const authentication = async( {req} ) => {
         try {
             let requestOptions = {
                 method   : 'POST',
-                headers  : {"Content-Type": "application/json"},
+                headers  : {"Content-Type": "application/json", 
+                            "Accept" : "application/json"},
                 body     : JSON.stringify( {token} ),
                 redirect : 'follow'
             };

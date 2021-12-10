@@ -5,7 +5,7 @@ const reservaTypes = gql`
     tipo_documento: String!
     numero_documento: Int!
     nombre_completo: String!
-    telefono: Int!
+    telefono: String!
     correo_electronico: String!
     fecha: String!
     id_plan: Int!
@@ -14,7 +14,7 @@ const reservaTypes = gql`
     tipo_documento: String!
     numero_documento: Int!
     nombre_completo: String!
-    telefono: Int!
+    telefono: String!
     correo_electronico: String!
     fecha: String
     id_plan: Int!
@@ -24,7 +24,7 @@ const reservaTypes = gql`
     tipo_documento: String!
     numero_documento: Int!
     nombre_completo: String!
-    telefono: Int!
+    telefono: String!
     correo_electronico: String!
     fecha: String
     id_plan: Int!
@@ -34,7 +34,7 @@ const reservaTypes = gql`
     tipo_documento: String!
     numero_documento: Int!
     nombre_completo: String!
-    telefono: Int!
+    telefono: String!
     correo_electronico: String!
     fecha: String
     id_plan: PlanDetail
