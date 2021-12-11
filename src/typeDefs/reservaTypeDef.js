@@ -20,7 +20,6 @@ const reservaTypes = gql`
     id_plan: Int!
   }
   input ReservaUpdate {
-    id_reserva: Int
     tipo_documento: String!
     numero_documento: Int!
     nombre_completo: String!
@@ -48,7 +47,7 @@ const reservaTypes = gql`
   type Mutation {
     createReserva(reserva: ReservaInput): Reserva
     deleteReserva(idReserva: Int!): String!
-    ReservaUpdate(reserva: ReservaUpdate): ReservaDetail
+    ReservaUpdate(idReserva: Int!,reserva: ReservaUpdate): ReservaDetail
   }
 `;
 module.exports = reservaTypes;

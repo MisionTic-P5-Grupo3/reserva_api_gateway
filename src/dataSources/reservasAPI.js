@@ -20,10 +20,8 @@ class ReservasAPI extends RESTDataSource {
   async detailReserva(idReserva) {
     return await this.get(`/reserva_usuario/${idReserva}/`);
   }
-  async updateReserva(reserva) {
-    console.log(reserva);
-    reserva = new Object(reserva);
-    let idReserva = reserva.id_reserva;
+  async updateReserva(idReserva,Reserva) {
+    const reserva = new Object(Reserva);
     return await this.put(`/reserva_usuario/update/${idReserva}/`, reserva);
   }
   async deleteReserva(idReserva) {

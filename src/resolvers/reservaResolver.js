@@ -17,8 +17,8 @@ const reservasResolver = {
     deleteReserva: async (_, { idReserva }, { dataSources }) => {
       return await dataSources.reservasAPI.deleteReserva(idReserva);
     },
-    ReservaUpdate: async (_, { idReserva }, { dataSources }) => {
-      return await dataSources.reservasAPI.updateReserva(idReserva);
+    ReservaUpdate: async (_, { idReserva,Reserva }, { dataSources }) => {
+      return await dataSources.reservasAPI.updateReserva(idReserva,Reserva);
     },
   },
 };
