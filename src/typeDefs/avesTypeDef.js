@@ -12,7 +12,6 @@ const avesTypes = gql`
     nombreCientificoAve: String
     tamano: Int
     tipoAve: String
-    url: String
   }
   input AveUpdate {
     nombreAve: String!
