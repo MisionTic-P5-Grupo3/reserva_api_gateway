@@ -8,10 +8,11 @@ const avesTypes = gql`
     tipoAve: String!
   }
   input AveInput {
-    nombreAve: String!
-    nombreCientificoAve: String!
-    tamano: Int!
-    tipoAve: String!
+    nombreAve: String
+    nombreCientificoAve: String
+    tamano: Int
+    tipoAve: String
+    url: String
   }
   input AveUpdate {
     nombreAve: String!
