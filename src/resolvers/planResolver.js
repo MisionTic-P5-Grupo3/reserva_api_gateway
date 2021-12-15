@@ -14,11 +14,11 @@ const planResolver = {
     },
   },
   Mutation: {
-    updatePlan: async (_, { planId ,Plan}, { dataSources }) => {
-      return await dataSources.reservasAPI.updatePlan(planId,Plan);
+    updatePlan: async (_, { planId ,plan}, { dataSources }) => {
+      return await dataSources.reservasAPI.updatePlan(planId,plan);
     },
-    createPlan: async (_, { Plan}, { dataSources }) => {
-      return await dataSources.reservasAPI.createPlan(Plan);
+    createPlan: async (_, { plan }, { dataSources }) => {
+      return await dataSources.reservasAPI.createPlan(plan);
     },
     deletePlan: async (_, { planId }, { dataSources }) => {
       return await dataSources.reservasAPI.deletePlan(planId);
