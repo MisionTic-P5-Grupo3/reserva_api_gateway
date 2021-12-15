@@ -22,6 +22,7 @@ class ReservasAPI extends RESTDataSource {
   }
   async updateReserva(idReserva,Reserva) {
     const reserva = new Object(Reserva);
+    console.log(Reserva)
     return await this.put(`/reserva_usuario/update/${idReserva}/`, reserva);
   }
   async deleteReserva(idReserva) {
@@ -39,10 +40,13 @@ class ReservasAPI extends RESTDataSource {
   async PlanForTimeDetail(jornada) {
     return await this.get(`/plans_for_time/${jornada}/`);
   }
-  async updatePlan() {
-    plan = new Object(JSON.parse(JSON.stringify(plan)));
-    let idPlan = plan.id;
+  async updatePlan(idPlan,Plan) {
+    const plan = new Object(Plan);
     return await this.put(`/plan_usuario/update/${idPlan}/`, plan);
+  }
+  async createPlan(Plan) {
+    Plan = new Object(Plan);
+    return await this.put(`/plan_usuario/`, Plan);
   }
   async deletePlan(idplan) {
     return await this.delete(`/plan_usuario/remove/${idplan}/`);

@@ -9,6 +9,13 @@ const planTypes = gql`
     jornada: String
     url: String
   }
+  input PlanInput {
+    nombre_plan: String!
+    precio: Int!
+    descripcion: String
+    jornada: String
+    url: String
+  }
   type PlanDetail {
     id_plan: Int!
     nombre_plan: String!
@@ -32,6 +39,7 @@ const planTypes = gql`
     getPlansForJornada(jornada: String!): [Plan]
   }
   type Mutation {
+    createPlan(plan: PlanInput): PlanDetail
     updatePlan(plan: PlanUpdate,planId: Int!): PlanDetail
     deletePlan(planId: Int!): String!
   }
