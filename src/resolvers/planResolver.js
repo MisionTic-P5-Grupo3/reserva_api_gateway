@@ -14,8 +14,8 @@ const planResolver = {
     },
   },
   Mutation: {
-    updatePlan: async (_, { planId }, { dataSources }) => {
-      return await dataSources.reservasAPI.updatePlan(planId);
+    updatePlan: async (_, { planId ,Plan}, { dataSources }) => {
+      return await dataSources.reservasAPI.updatePlan(planId,Plan);
     },
     deletePlan: async (_, { planId }, { dataSources }) => {
       return await dataSources.reservasAPI.deletePlan(planId);

@@ -6,17 +6,23 @@ const avesTypes = gql`
     nombreCientificoAve: String!
     tamano: Int
     tipoAve: String!
+    descripcion: String
+    url: String
   }
   input AveInput {
-    nombreAve: String
-    nombreCientificoAve: String
-    tamano: Int
-    tipoAve: String
+    nombreAve: String!
+    nombreCientificoAve: String!
+    tamano: Int!
+    tipoAve: String!
+    descripcion: String!
+    url: String!
   }
   input AveUpdate {
     nombreAve: String!
     tamano: Int!
     tipoAve: String!
+    descripcion: String
+    url: String
   }
   type Query {
     getAveById(aveId: String!): Ave!
@@ -25,7 +31,7 @@ const avesTypes = gql`
   }
   type Mutation {
     createAve(ave: AveInput!): Ave!
-    updateAve(ave: AveUpdate): Ave!
+    updateAve(ave: AveUpdate,aveId: String!): Ave!
     deleteAve(aveId: String!): String!
   }
 `;

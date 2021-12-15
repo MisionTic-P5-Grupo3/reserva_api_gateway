@@ -11,13 +11,13 @@ const avesResolver = {
     },
   },
   Mutation: {
-    createAve: async (_, { ave }, { dataSources, userIdToken }) => {
+    createAve: async (_, { ave }, { dataSources }) => {
       return await dataSources.avesAPI.createAve(ave);
     },
-    updateAve: async (_, { ave }, { dataSources, userIdToken }) => {
-      return await dataSources.avesAPI.updateAve(ave);
+    updateAve: async (_, { ave,aveId }, { dataSources }) => {
+      return await dataSources.avesAPI.updateAve(ave,aveId);
     },
-    deleteAve: async (_, { aveId }, { dataSources, userIdToken }) => {
+    deleteAve: async (_, { aveId }, { dataSources }) => {
       return await dataSources.avesAPI.deleteAve(aveId);
     },
   },
