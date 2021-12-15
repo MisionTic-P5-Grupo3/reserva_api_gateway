@@ -46,7 +46,7 @@ class ReservasAPI extends RESTDataSource {
   }
   async createPlan(Plan) {
     Plan = new Object(Plan);
-    return await this.put(`/plan_usuario/`, Plan);
+    return await this.post(`/plan_usuario/`, Plan);
   }
   async deletePlan(idplan) {
     return await this.delete(`/plan_usuario/remove/${idplan}/`);
