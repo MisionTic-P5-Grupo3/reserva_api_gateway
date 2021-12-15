@@ -17,6 +17,9 @@ const planResolver = {
     updatePlan: async (_, { planId ,Plan}, { dataSources }) => {
       return await dataSources.reservasAPI.updatePlan(planId,Plan);
     },
+    createPlan: async (_, { Plan}, { dataSources }) => {
+      return await dataSources.reservasAPI.createPlan(Plan);
+    },
     deletePlan: async (_, { planId }, { dataSources }) => {
       return await dataSources.reservasAPI.deletePlan(planId);
     },
