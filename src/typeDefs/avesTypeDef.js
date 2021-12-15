@@ -2,6 +2,7 @@ const { gql } = require("apollo-server");
 
 const avesTypes = gql`
   type Ave {
+    id:String!
     nombreAve: String!
     nombreCientificoAve: String!
     tamano: Int
@@ -18,6 +19,7 @@ const avesTypes = gql`
     url: String!
   }
   input AveUpdate {
+    nombreCientificoAve: String!
     nombreAve: String!
     tamano: Int!
     tipoAve: String!
