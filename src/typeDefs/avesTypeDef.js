@@ -31,7 +31,7 @@ const avesTypes = gql`
   }
   type Mutation {
     createAve(ave: AveInput!): Ave!
-    updateAve(ave: AveUpdate): Ave!
+    updateAve(ave: AveUpdate,aveId: String!): Ave!
     deleteAve(aveId: String!): String!
   }
 `;

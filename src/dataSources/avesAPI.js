@@ -20,10 +20,8 @@ class AvesAPI extends RESTDataSource {
   async aveByJornada(aveJornada) {
     return await this.get(`/avesByJornada/${aveJornada}`);
   }
-
-  async updateAve(ave) {
-    ave = new Object(JSON.parse(JSON.stringify(ave)));
-    let aveId = ave.id;
+  async updateAve(Ave,aveId) {
+    const ave = new Object(Ave);
     return await this.put(`/updateAve/${aveId}/`, ave);
   }
   async deleteAve(aveId) {
